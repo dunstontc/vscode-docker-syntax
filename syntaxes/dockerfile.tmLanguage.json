@@ -1,0 +1,182 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Dockerfile",
+    "scopeName": "source.dockerfile",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#constant"
+        },
+        {
+            "include": "#keyword"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#variable"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.whitespace.comment.leading.dockerfile"
+                        },
+                        "2": {
+                            "name": "comment.line.number-sign.dockerfile"
+                        },
+                        "3": {
+                            "name": "punctuation.definition.comment.dockerfile"
+                        }
+                    },
+                    "comment": "comment.line",
+                    "match": "^(\\s*)((#).*$\\n?)"
+                },
+                {
+                    "name": "comment.line.dockerfile",
+                    "match": "(\\s+)((#).*$\\n?)"
+                }
+            ]
+        },
+        "constant": {
+            "patterns": [
+                {
+                    "match": "\\\\.",
+                    "name": "constant.character.escape.dockerfile"
+                },
+                {
+                    "match": "\\\\$",
+                    "name": "constant.character.escape.dockerfile"
+                },
+                {
+                    "match": "(?<=EXPOSE\\s)(\\d+)",
+                    "name": "constant.numeric.dockerfile"
+                }
+            ]
+        },
+        "keyword": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.shell.dockerfile",
+                    "match": "((&&)|(>>)|(<<)|[|;>])"
+                },
+                {
+                    "name": "keyword.operator.assignment.dockerfile",
+                    "match": "([=])"
+                },
+                {
+                    "name": "keyword.operator.flag.dockerfile",
+                    "match": "(\\s(-)+[a-zA-Z0-9-]+)"
+                },
+                {
+                    "include": "#special-method"
+                }
+            ]
+        },
+        "special-method": {
+            "patterns": [
+                {
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.special-method.dockerfile"
+                        },
+                        "2": {
+                            "name": "support.type.base-image.dockerfile"
+                        },
+                        "3": {
+                            "name": "keyword.other.special-method.dockerfile"
+                        }
+                    },
+                    "match": "^\\s*\\b(?i:(FROM))(\\b.*?\\b)(?i:(AS))\\b"
+                },
+                {
+                    "name": "keyword.other.special-method.dockerfile",
+                    "match": "^\\s*(?i:(ONBUILD)\\s+)?(?i:(CMD|ENTRYPOINT))\\s"
+                },
+                {
+                    "name": "keyword.other.special-method.dockerfile",
+                    "match": "^\\s*(?i:(ONBUILD)\\s+)?(?i:(ADD|ARG|CMD|COPY|ENTRYPOINT|ENV|EXPOSE|FROM|HEALTHCHECK|LABEL|MAINTAINER|RUN|SHELL|STOPSIGNAL|USER|VOLUME|WORKDIR))\\s"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.string.begin.dockerfile"
+                        }
+                    },
+                    "end": "\"",
+                    "endCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.string.end.dockerfile"
+                        }
+                    },
+                    "name": "string.quoted.double.dockerfile",
+                    "patterns": [
+                        {
+                            "match": "\\\\.",
+                            "name": "constant.character.escaped.dockerfile"
+                        }
+                    ]
+                },
+                {
+                    "begin": "'",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.string.begin.dockerfile"
+                        }
+                    },
+                    "end": "'",
+                    "endCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.string.end.dockerfile"
+                        }
+                    },
+                    "name": "string.quoted.single.dockerfile",
+                    "patterns": [
+                        {
+                            "match": "\\\\.",
+                            "name": "constant.character.escaped.dockerfile"
+                        }
+                    ]
+                }
+            ]
+        },
+        "variable": {
+            "patterns": [
+                {
+                    "match": "\\$[a-zA-Z0-9_\\-]+",
+                    "name": "variable.other.dockerfile"
+                },
+                {
+                    "match": "(?<=\\${)([a-zA-Z0-9.\\-_]+)(?=})",
+                    "name": "variable.other.dockerfile"
+                },
+                {
+                  "begin": "\\$\\{",
+                  "beginCaptures": {
+                      "1": {
+                          "name": "punctuation.definition.variable.begin.dockerfile"
+                      }
+                  },
+                  "end": "\\}",
+                  "endCaptures": {
+                      "1": {
+                          "name": "punctuation.definition.variable.end.dockerfile"
+                      }
+                  },
+                  "name": "variable.other.dockerfile",
+                  "patterns": []
+              }
+            ]
+        }
+    }
+}

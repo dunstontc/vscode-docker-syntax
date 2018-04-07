@@ -1,0 +1,43 @@
+{
+    "name": "vscode-docker-syntax",
+    "displayName": "Dockerfile Syntax Highlighting",
+    "version": "0.1.0",
+    "publisher": "dunstontc",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/dunstontc/.git"
+    },
+    "engines": {
+        "vscode": "^1.21.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "galleryBanner": {
+      "color": "#569cd6",
+      "theme": "dark"
+    },
+    "icon": "assets/icon.png",
+    "contributes": {
+        "languages": [
+            {
+                "id": "dockerfile",
+                "aliases": [
+                    "dockerfile",
+                    "dockerfile"
+                ],
+                "extensions": [
+                    "Dockerfile"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "dockerfile",
+                "scopeName": "source.dockerfile",
+                "path": "./syntaxes/dockerfile.tmLanguage.json"
+            }
+        ]
+    }
+}
