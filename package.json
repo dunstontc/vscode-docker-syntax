@@ -5,7 +5,7 @@
     "publisher": "dunstontc",
     "repository": {
       "type": "git",
-      "url": "https://github.com/dunstontc/.git"
+      "url": "https://github.com/dunstontc/vscode-docker-syntax.git"
     },
     "engines": {
         "vscode": "^1.21.0"
