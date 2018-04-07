@@ -1,7 +1,7 @@
 {
     "name": "vscode-docker-syntax",
     "displayName": "Dockerfile Syntax Highlighting",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "dunstontc",
     "repository": {
       "type": "git",
@@ -21,7 +21,7 @@
     "contributes": {
         "languages": [
             {
-                "id": "dockerfile",
+                "id": "Dockerfile",
                 "aliases": [
                     "dockerfile",
                     "dockerfile"
@@ -34,7 +34,7 @@
         ],
         "grammars": [
             {
-                "language": "dockerfile",
+                "language": "Dockerfile",
                 "scopeName": "source.dockerfile",
                 "path": "./syntaxes/dockerfile.tmLanguage.json"
             }
