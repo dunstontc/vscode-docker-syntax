@@ -2,7 +2,7 @@
     "name": "vscode-docker-syntax",
     "displayName": "vscode-docker-syntax",
     "description": "Syntax highlighting for Dockerfiles.",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "publisher": "dunstontc",
     "repository": {
       "type": "git",
