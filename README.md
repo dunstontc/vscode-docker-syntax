@@ -1,6 +1,7 @@
 # vscode-docker-syntax
 [![GitHub issues](https://img.shields.io/github/issues/dunstontc/vscode-docker-syntax.svg)](https://github.com/dunstontc/vscode-docker-syntax/issues)
 [![License](https://img.shields.io/github/license/dunstontc/vscode-docker-syntax.svg)](https://github.com/dunstontc/vscode-docker-syntax/blob/master/LICENSE)
+[![Version](https://vsmarketplacebadge.apphb.com/version-short/dunstontc.vscode-docker-syntax.svg?style=flat&color=blue)](https://marketplace.visualstudio.com/items?itemName=dunstontc.vscode-docker-syntax )
 
 ## Features 
 

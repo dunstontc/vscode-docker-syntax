@@ -1,6 +1,11 @@
 # Change Log
 
 ## 0.1.4
+- Removed samples.
+- Added badges to readme.
+- Overall improvements.
+
+## 0.1.4
 - Updated description.
 - Updated banner background.
 - Removed unused files.
