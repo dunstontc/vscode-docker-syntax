@@ -17,6 +17,7 @@ Highlights:
 ## Sources
 - [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
 - [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) 
+- [Official Docker Textmate Syntax](https://github.com/moby/moby/blob/master/contrib/syntax/textmate/Docker.tmbundle/Syntaxes/Dockerfile.tmLanguage)
 
 ## TODO
 - [] Match `Parser directives`
